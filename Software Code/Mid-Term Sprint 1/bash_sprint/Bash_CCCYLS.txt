@@ -1,0 +1,97 @@
+Creating the 3 files.
+touch PySample.py ExtraP.txt Stuff.py
+
+Adding the words "RetailCost" and "getName" to the files created
+echo "RetailCost" > PySample.py
+echo "getName" > PySample.py
+
+Command is echo to put the value inside the "" string then uses the > command to tell which file to populate with the string.
+
+If you want to see your working directory
+pwd = prints working directory
+
+If you want to see lists of files
+ls = prints list of files in current working directory
+ls -a = prints list of files and hidden files, hidden files are donoted by the (.) infront of the file name.
+ls -l = prints list of files with permissions, number of links, owner, group, size, and modification date displayed.
+ls -la = prints list of files with both -a and -l combined.
+
+The 'cat' command will display the contents of the file defined.
+ie: cat PySample.py
+To display the first 3 lines of the file use the 'head'command.
+ei: head PySample.py
+to display the last 3 lines of the file use the 'tail -3' command.
+ei: tail -3 PySample.py
+The '-3' in the tail command can be changed to whatever number of lines you want to display.
+ei: tail -9 pySample.py
+To display the last 3 lines of all files use the 'tail -3' command in a loop.
+ei: tail -3 PySample.py
+tail -3 PySample.py
+tail -3 PySample.py
+For larger files use the 'less' command.
+ei: less [filename]
+
+less is a command in bash to open a larger widnow, there are some keybinds that become available in this window.
+ei: Q to quit
+Space to move forward one screen
+b to move backwards one screen
+Enter moves forward one line
+w moves backwards one line
+
+Creating a directory in bash can be done using the mkdir command.
+Creating a directory inside of another is simply defining the directory.
+Single Directory
+ei: mkdir PythonCurrent
+mkdir PythonDone
+mkdir TextFiles
+Multiple Directory
+ei: mkdir PythonDone/2022
+mkdir PythonDone/2023
+mkdir TextFiles/Python
+mkdir TextFiles/Other
+
+To change the directory use the cd command. After using this command you can display your current working directory using pwd.
+ei: cd PythonDone
+pwd
+the cd command without a filename will move you out one directory.
+ei: (while in PythonDone) cd will take you back out of PythonDone.
+you can also enter mutliple directories using the /
+ei: cd PythonDone/Other
+pwd
+Notice the pwd is after to check my working directory is correct.
+
+Moving files to different directories can be done using the mv command.
+ei: mv Stuff.py PythonCurrent/
+ls PythonCurrent
+cp ExtraP.txt TextFiles/Python
+ls TextFiles/Python
+The cp command is used to copy the file from your working directory to the specified directory, the ls is used to check the move.
+
+Moving to the pyhton folder can be done using the cd command.
+Displaying the first 6 lines of a file can be done using the head command followed by the - and the number of lines.
+ei: cd Python
+head -6 ExtraP.txt
+cd
+ending with the cd command will move you back one directory.
+
+while in the working directory you can display files in other directories using the cat command followed by the directory.
+ei: cat PythonDone/ExtraP.txt
+
+While in the working directory you can search for files using the find command.
+ei: find . -name Stuff.py
+the find command requires the . to tell it to work from the current directory, the -name is used to tell the find command what to look for in the working directory and subdirectories.
+
+To change the permissions of the PySample.py file you can use the chmod command followed by the numbers for permissions.
+ei: chmod 555 PySample.py
+
+To find the text inside files, finding text without case, and directing the output of the bash commands to a file called FindResult.txt you can use the following:
+ei: find . -type f -exec grep -l "getName" {} + > FindResults.txt
+find . -type f -exec grep -il "RetailCost" {} + >> FindResults.txt
+The first command uses > to write the file, the second uses >> to not overwrite the file and just add to it. The second also uses -il instead of -l to ignore case.
+
+A useful Bash Command is 'du'
+
+du stands for disk usage and is useful for managing directories and file space. Using the du -h command will display a human-readable output (eg:1k 1m 1g).
+
+This command will display the size of your current working directory or you can call a different directory as before.
+ei: du -h PythonDone

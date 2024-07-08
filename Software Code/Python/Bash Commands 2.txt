@@ -1,0 +1,78 @@
+ls
+ls -a (hidden files)
+ls -l (to show additional information)
+ls -al 
+ls -lh (human friendly format)
+ls -R (list all the files recursively, descending down the directory from the given path)
+ls -lR
+
+
+touch (updates the access date on an existing file, also created a file if its not there)
+
+touch help.txt (file wasn't there so it got created)
+touch Lesson10.py (time stamp got updated)
+
+
+cd .. ( to come out of a folder)
+cd "folder name" to enter a folder
+pwd (print working directory)
+
+cat (display the contents of any file)
+cat help.txt>help2.txt (copy contents of one file to another left to right)
+
+clear ( to clear your screen)
+
+head filename (display first 10 lines from your file)
+head -3 filename (display first 3 lines from your file)
+
+tail filename( display last 10 lines from your file)
+tail -4 filename (display last 4 lines from your file)
+
+less filename ( it opens your file in a mini editor or mini screen\viewer)
+
+interactive
+
+less --help
+
+q to exit the mini screen
+enter moves you line by line
+space moves you screen down
+w & z move to window backward and forward
+b moves screen up
+
+
+rm myfile.* (remove a file without asking)
+rm -i myfile.* (remove a file after asking for permission)
+rm -i * (delete everything but ask for permission before that)
+rm -i *.txt (delete all the text files after asking)
+rm -f * (force the deletion of all the files and dont ask me)
+
+mkdir foldername (creates a directory for you)
+mkdir foldername/subdir
+
+rmdir mydir (if it is empty)
+rmdir mydir/subdir/level3 
+
+
+cp original.txt copy.txt
+
+mv help.txt original.txt (rename a file)
+mv help2.txt ~ (moved a file to home)
+mv help3.txt ~/downloads (move file to a different folder)
+
+
+
+chmod (change the mode of access of your file)
+chgrp
+chown
+chgrp --help
+
+
+
+
+
+
+
+
+
+

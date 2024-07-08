@@ -1,0 +1,98 @@
+Written by Colin G. Yetman June 18th 2024
+References Dr. Malik BASH_COMMANDS.TXT
+
+Bash Commands Cheat Sheet
+Listing Files and Directories
+
+    ls: List files and directories.
+    ls -a: Include hidden files in the list.
+    ls -l: Show detailed information about each file and directory.
+        Example: -rw-r--r-- 1 user group 4096 Jan 1 12:34 file.txt
+        This shows file permissions, number of links, owner, group, size, date, and name.
+    ls -al: Combine -a and -l options to show all files with detailed information.
+    ls -lh: Show file sizes in a human-friendly format (e.g., KB, MB).
+    ls -R: List all files recursively, descending into directories from the given path.
+    ls -lR: Combine -l and -R options for detailed recursive listing.
+
+File Operations
+
+    touch <filename>: Update the access date on an existing file or create a new file if it doesn't exist.
+        Example: touch help.txt (creates help.txt if it doesn't exist).
+        Example: touch Lesson10.py (updates the timestamp of Lesson10.py).
+
+Navigating Directories
+
+    cd ..: Move up one directory level.
+    cd <folder_name>: Enter a specified folder.
+    pwd: Print the current working directory.
+
+Viewing File Contents
+
+    cat <filename>: Display the contents of a file.
+        Example: cat help.txt (displays the contents of help.txt).
+        Example: cat help.txt > help2.txt (copy contents of help.txt to help2.txt).
+    clear: Clear the terminal screen.
+
+Displaying Part of a File
+
+    head <filename>: Display the first 10 lines of a file.
+        Example: head -3 <filename> (display the first 3 lines).
+    tail <filename>: Display the last 10 lines of a file.
+        Example: tail -4 <filename> (display the last 4 lines).
+
+Viewing Files with less
+
+    less <filename>: Open a file in a mini-editor/viewer.
+        Interactive commands within less:
+            less --help: Show help for less.
+            q: Exit the mini-screen.
+            Enter: Move down one line.
+            Space: Move down one screen.
+            w and z: Move window backward and forward.
+            b: Move up one screen.
+
+Removing Files
+
+    rm <filename>: Remove a file without asking.
+        Example: rm myfile.* (remove files matching the pattern myfile.*).
+        Example: rm -i myfile.* (ask for confirmation before removing each file).
+        Example: rm -i * (ask for confirmation before removing any file).
+        Example: rm -i *.txt (ask for confirmation before removing text files).
+        Example: rm -f * (force deletion of all files without asking).
+
+Managing Directories
+
+    mkdir <folder_name>: Create a directory.
+        Example: mkdir foldername/subdir (create a subdirectory within foldername).
+    rmdir <directory_name>: Remove an empty directory.
+        Example: rmdir mydir/subdir/level3 (remove a nested empty directory).
+
+Copying and Moving Files
+
+    cp <source> <destination>: Copy a file.
+        Example: cp original.txt copy.txt (copy original.txt to copy.txt).
+    mv <source> <destination>: Move or rename a file.
+        Example: mv help.txt original.txt (rename help.txt to original.txt).
+        Example: mv help2.txt ~ (move help2.txt to the home directory).
+        Example: mv help3.txt ~/downloads (move help3.txt to the downloads folder).
+
+Changing File Permissions and Ownership
+
+    chmod <mode> <filename>: Change the access permissions of a file.
+        Example: chmod 755 script.sh (set the file to be readable and executable by everyone, writable by the owner).
+    chgrp <group> <filename>: Change the group ownership of a file.
+        Example: chgrp staff file.txt (change the group of file.txt to staff).
+    chown <owner>:<group> <filename>: Change the ownership of a file.
+        Example: chown user:staff file.txt (change the owner of file.txt to user and the group to staff).
+    chgrp --help: Display help for the chgrp command.
+
+New Commands
+
+    find <path> -name <pattern>: Search for files and directories that match a pattern.
+        Example: find /home/user -name "*.txt" (find all .txt files in /home/user and its subdirectories).
+    grep <pattern> <filename>: Search for a pattern within a file.
+        Example: grep "search_term" file.txt (search for "search_term" in file.txt).
+    history: Display the command history.
+        Example: history | grep "ls" (search for all ls commands in your history).
+    man <command>: Display the manual for a command.
+        Example: man ls (display the manual for the ls command).
